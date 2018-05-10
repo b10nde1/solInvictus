@@ -4,6 +4,14 @@ btnConfirm.onclick=function(activeTab){
     
 }
 
+const listUrl=(arg)=>{
+    
+}
+
+const urlMarket=(arg)=>{
+
+}
+
 const siteMap=(arg)=>{
 
 }
@@ -12,12 +20,8 @@ const htmlCode=(arg)=>{
 
 }
 
-const urlMarket=(arg)=>{
-
-}
-
 const displayResut=(arg)=>{
-    
+
 }
 
 const openPage=(urlIn)=>{
