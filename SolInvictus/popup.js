@@ -4,6 +4,22 @@ btnConfirm.onclick=function(activeTab){
     
 }
 
+const siteMap=(arg)=>{
+
+}
+
+const htmlCode=(arg)=>{
+
+}
+
+const urlMarket=(arg)=>{
+
+}
+
+const displayResut=(arg)=>{
+    
+}
+
 const openPage=(urlIn)=>{
     chrome.tabs.create({ url: urlIn , selected: false});
 }
