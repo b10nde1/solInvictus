@@ -2,9 +2,12 @@
   <html>
     <head>
       <style>
+        body{
+          width: 200px;
+        }
         button {
           height: 30px;
-          width: 30px;
+          width: 100%;
           outline: none;
         }
         .footer_proximity{
@@ -15,14 +18,33 @@
           text-align:center;
           margin-bottom: 10px;
         }
-        .input_key{
+        .select_option{
           width: 100%;
+          margin-bottom: 10px;
         }
       </style>
     </head>
     <body>
       <h1 align="center">Sol Invictus</h1>      
-      
+      <div id="option-section">
+        <div class="checkbox_option">
+          <input type="checkbox" name="optionSiteMap" value="optionSiteMap" id="optionSiteMap">SiteMap.xml
+          <input type="checkbox" name="optionCodeHtml" value="optionCodeHtml" id="optionCodeHtml">Html
+          <input type="checkbox" name="optionUrl" value="optionUrl" id="optionUrl">Url
+        </div>
+        <div id="option-list">
+          <Select id="market" class="select_option">
+            <option value="0">Market</option>
+            <option value="us_en">US-en</option>
+          </Select>
+          <Select id="environment" class="select_option">
+            <option value="0">environment</option>
+            <option value="cd">Prod CD</option>
+          </Select>
+        </div>
+      </div>
+      <button id="btn-confirm" class="button">confirm</button>
+      <div id="result" style="display: none"></div>
       <a href="options.html"><p class='footer_proximity'>Proximity BBDO Mauritius</p></a>
       <script src='popup.js'></script>
     </body>
