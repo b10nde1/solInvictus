@@ -48,9 +48,13 @@ const initListOfUrls=(arg)=>{
         let listMarketsCM=[['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com']];
         if(arg=='cd')return listMarketsCD;
         if(arg=='cm')return listMarketsCM;*/
+        let listUrlsProdCDPampers = document.getElementsByTagName("market");
+        for(var compt=0;compt<listUrlsProdCDPampers.length;compt++){
+            console.log(listUrlsProdCDPampers[compt].getAttribute("info"));
+        }
     }
     catch(e){
-        console.log('Error initListOfUrls');
+        console.log('Error initListOfUrls() => '+e.message);
     }
 }
 /* */
@@ -67,8 +71,9 @@ const searchMarket=(argList,argMarket)=>{
 }
 
 const urlMarket=(argMarket,argEnvironment)=>{
-    let resultUrl=searchMarket(initListOfUrls(argEnvironment),argMarket);
-    return resultUrl;
+    initListOfUrls(argEnvironment);
+    //let resultUrl=searchMarket(initListOfUrls(argEnvironment),argMarket);
+    //return resultUrl;
 }
 
 const siteMap=(arg)=>{return arg+'/sitemap.xml';}
