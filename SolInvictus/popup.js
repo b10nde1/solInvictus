@@ -53,6 +53,7 @@ const initListOfUrls=(arg)=>{
         console.log('Error initListOfUrls');
     }
 }
+/* */
 
 const searchMarket=(argList,argMarket)=>{
     let result='';
@@ -69,7 +70,6 @@ const urlMarket=(argMarket,argEnvironment)=>{
     let resultUrl=searchMarket(initListOfUrls(argEnvironment),argMarket);
     return resultUrl;
 }
-/* */
 
 const siteMap=(arg)=>{return arg+'/sitemap.xml';}
 
