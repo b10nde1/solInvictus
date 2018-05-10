@@ -3,11 +3,35 @@ let btnSelectModeUrl=document.getElementById("sol-invictus-mode_url");
 let btnConfirm=document.getElementById('btn-confirm');
 let siteMapFile=document.getElementById('siteMapFile');
 
-/* */
 siteMapFile.onchange=function(activeTab){
-    
+    let input = event.target;
+    let reader = new FileReader();
+    let searchKey=document.getElementById('searchKey').value;
+    reader.onload = function(){
+        let dataURL = reader.result;
+        document.getElementById("code-to-scan").innerHTML=dataURL;
+        scanDocument(searchKey);
+    };
+    let result = reader.readAsText(input.files[0]);
 }
-/* */
+
+const scanDocument=(arg)=> {
+    let listLoc=document.getElementsByTagName('loc');
+    let result='';
+    let total=0;
+    for(var compt=0;compt<listLoc.length;compt++){
+        let temp=listLoc[compt].innerText;
+        let check=temp.search(arg);
+        if(check>=0){
+            if(document.getElementById('mode-sitemap_openUrlOn').checked)openPage(temp)
+            total+=1;
+            result+='<p>'+temp+'</p>';
+        }
+    }
+    document.getElementById('mode-sitemap-result-urls').innerHTML=result;
+    copyElement(document.getElementById('mode-sitemap-result-urls'));
+    document.getElementById('total-count').innerHTML=total;
+}
 
 btnSelectModeSiteMap.onclick=function(activeTab){
     document.getElementById("mode-sitemap").style.display="block";
@@ -41,7 +65,6 @@ btnConfirm.onclick=function(activeTab){
     displayResut(result);
 }
 
-/* */
 const initListOfUrls=(arg)=>{
     try{
         let listMarketsCD=[['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com']];
@@ -53,7 +76,6 @@ const initListOfUrls=(arg)=>{
         console.log('Error initListOfUrls() => '+e.message);
     }
 }
-/* */
 
 const searchMarket=(argList,argMarket)=>{
     let result='';
