@@ -27,6 +27,7 @@ const listUrl=()=>{
 }
 
 const urlMarket=(argMarket,argEnvironment)=>{
+    console.log(argMarket+" "+argEnvironment);
     let listOfUrls=listUrl();
 }
 
