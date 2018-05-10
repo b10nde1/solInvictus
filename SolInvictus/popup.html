@@ -2,9 +2,12 @@
   <html>
     <head>
       <style>
+        body{
+          width: 300px;
+        }
         button {
           height: 30px;
-          width: 30px;
+          width: 100%;
           outline: none;
         }
         .footer_proximity{
@@ -15,6 +18,10 @@
           text-align:center;
           margin-bottom: 10px;
         }
+        .select_option{
+          width: 100%;
+          margin-bottom: 10px;
+        }
         .input_key{
           width: 100%;
         }
@@ -22,7 +29,48 @@
     </head>
     <body>
       <h1 align="center">Sol Invictus</h1>      
-      
+      <div  class="checkbox_option" id="select-mode">
+        <input type="radio" name="sol-invictus-mode" value="sol-invictus-mode_url" id="sol-invictus-mode_url">Url
+        <input type="radio" name="sol-invictus-mode" value="sol-invictus-mode_sitemap" id="sol-invictus-mode_sitemap" >SiteMap
+      </div>
+      <div id="mode-sitemap" style="display: none">
+        <div class="checkbox_option">
+          <input type="radio" name="mode-sitemap_openUrl" value="mode-sitemap_openUrlOn" id="mode-sitemap_openUrlOn">OpenUrls ON
+          <input type="radio" name="mode-sitemap_openUrl" value="mode-sitemap_openUrlOff" id="mode-sitemap_openUrlOff" checked>OpenUrls Off
+        </div>
+        <div class="input-key" style="margin-bottom: 10px;">
+            <input class="input_key" type="text" placeholder="key" name='searchKey' id="searchKey">
+        </div>
+        <div id="sitemap-file" style="margin-bottom: 10px;">
+            <input type="file" accept="text/*" name="siteMapFile" id="siteMapFile">
+        </div>
+        <div id="mode-sitemap-result">
+          <p>Total Urls : <i id="total-count"></i></p>
+          <div id="mode-sitemap-result-urls"></div>
+          <div id="code-to-scan" style="visibility:hidden;display:none"></div>
+        </div>
+      </div>
+      <div id="mode-url" style="display: none">
+        <div id="option-section">
+          <div class="checkbox_option">
+            <input type="checkbox" name="optionSiteMap" value="optionSiteMap" id="optionSiteMap">SiteMap.xml
+            <input type="checkbox" name="optionCodeHtml" value="optionCodeHtml" id="optionCodeHtml">Html
+            <input type="checkbox" name="optionUrl" value="optionUrl" id="optionUrl">Url
+          </div>
+          <div id="option-list">
+            <Select id="market" class="select_option">
+              <option value="0">Market</option>
+              <option value="us_en">US-en</option>
+            </Select>
+            <Select id="environment" class="select_option">
+              <option value="0">environment</option>
+              <option value="cd">Prod CD</option>
+            </Select>
+          </div>
+        </div>
+        <button id="btn-confirm" class="button">confirm</button>
+        <div id="result"></div>
+      </div>
       <a href="options.html"><p class='footer_proximity'>Proximity BBDO Mauritius</p></a>
       <script src='popup.js'></script>
     </body>
