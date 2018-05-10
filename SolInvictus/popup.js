@@ -1,6 +1,13 @@
 let btnSelectModeSiteMap=document.getElementById("sol-invictus-mode_sitemap");
 let btnSelectModeUrl=document.getElementById("sol-invictus-mode_url");
 let btnConfirm=document.getElementById('btn-confirm');
+let siteMapFile=document.getElementById('siteMapFile');
+
+/* */
+siteMapFile.onchange=function(activeTab){
+    
+}
+/* */
 
 btnSelectModeSiteMap.onclick=function(activeTab){
     document.getElementById("mode-sitemap").style.display="block";
@@ -34,6 +41,7 @@ btnConfirm.onclick=function(activeTab){
     displayResut(result);
 }
 
+/* */
 const listUrl=()=>{
     return 'https://www.pampers.fr';
 }
@@ -42,6 +50,7 @@ const urlMarket=(argMarket,argEnvironment)=>{
     console.log(argMarket+" "+argEnvironment);
     let listOfUrls=listUrl();
 }
+/* */
 
 const siteMap=(arg)=>{return arg+'/sitemap.xml';}
 
