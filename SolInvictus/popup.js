@@ -44,10 +44,10 @@ btnConfirm.onclick=function(activeTab){
 /* */
 const initListOfUrls=(arg)=>{
     try{
-        let listMarketsCD=[['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com']];
+        /*let listMarketsCD=[['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com']];
         let listMarketsCM=[['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com']];
         if(arg=='cd')return listMarketsCD;
-        if(arg=='cm')return listMarketsCM;
+        if(arg=='cm')return listMarketsCM;*/
     }
     catch(e){
         console.log('Error initListOfUrls');
