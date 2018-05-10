@@ -1,32 +1,45 @@
 let btnConfirm=document.getElementById('btn-confirm');
 
 btnConfirm.onclick=function(activeTab){
-    
+    let market=document.getElementById("market").value;
+    let environment=document.getElementById("environment").value;
+    let returnUrl=urlMarket(market,environment);
+    let result="";
+    if(document.getElementById("optionSiteMap").checked){
+        let returnSitemap=siteMap(returnUrl);
+        result=result+'<p>'+returnSitemap+'</p>';
+        openPage(returnSitemap);
+    }
+    if(document.getElementById("optionCodeHtml").checked){
+        let returnHtml=htmlCode(returnUrl);
+        result=result+'<p>'+returnHtml+'</p>';
+        openPage(returnHtml);
+    }
+    if(document.getElementById("optionUrl").checked){
+        result=result+'<p>'+returnUrl+'</p>';
+        openPage(returnUrl);
+    }
+    displayResut(result);
 }
 
-const listUrl=(arg)=>{
-    
+const listUrl=()=>{
+    return 'https://www.pampers.fr';
 }
 
-const urlMarket=(arg)=>{
-
+const urlMarket=(argMarket,argEnvironment)=>{
+    let listOfUrls=listUrl();
 }
 
-const siteMap=(arg)=>{
+const siteMap=(arg)=>{return arg+'/sitemap.xml';}
 
-}
-
-const htmlCode=(arg)=>{
-
-}
+const htmlCode=(arg)=>{return 'view-source:'+arg;}
 
 const displayResut=(arg)=>{
-
+    document.getElementById("result").innerHTML=arg;
+    copyElement(document.getElementById("result"));
 }
 
-const openPage=(urlIn)=>{
-    chrome.tabs.create({ url: urlIn , selected: false});
-}
+const openPage=(urlIn)=>{chrome.tabs.create({ url: urlIn , selected: false});}
 
 const copyElement=(el)=>{
     let body = document.body, range, sel;
