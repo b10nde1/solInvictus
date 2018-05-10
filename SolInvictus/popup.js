@@ -1,4 +1,16 @@
+let btnSelectModeSiteMap=document.getElementById("sol-invictus-mode_sitemap");
+let btnSelectModeUrl=document.getElementById("sol-invictus-mode_url");
 let btnConfirm=document.getElementById('btn-confirm');
+
+btnSelectModeSiteMap.onclick=function(activeTab){
+    document.getElementById("mode-sitemap").style.display="block";
+    document.getElementById("mode-url").style.display="none";
+}
+
+btnSelectModeUrl.onclick=function(activeTab){
+    document.getElementById("mode-url").style.display="block";
+    document.getElementById("mode-sitemap").style.display="none";
+}
 
 btnConfirm.onclick=function(activeTab){
     let market=document.getElementById("market").value;

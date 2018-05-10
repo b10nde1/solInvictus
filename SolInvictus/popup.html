@@ -26,10 +26,14 @@
     </head>
     <body>
       <h1 align="center">Sol Invictus</h1>      
-      <div id="select-mode">
+      <div  class="checkbox_option" id="select-mode">
+        <input type="radio" name="sol-invictus-mode" value="sol-invictus-mode_url" id="sol-invictus-mode_url">Url
+        <input type="radio" name="sol-invictus-mode" value="sol-invictus-mode_sitemap" id="sol-invictus-mode_sitemap" >SiteMap
+      </div>
+      <div id="mode-sitemap">
 
       </div>
-      <div id="return-url">
+      <div id="mode-url" style="display: none">
         <div id="option-section">
           <div class="checkbox_option">
             <input type="checkbox" name="optionSiteMap" value="optionSiteMap" id="optionSiteMap">SiteMap.xml
