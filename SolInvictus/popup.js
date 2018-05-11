@@ -19,18 +19,29 @@ const scanDocument=(arg)=> {
     let listLoc=document.getElementsByTagName('loc');
     let result='';
     let total=0;
+    let finalList=new Array(50);
     for(var compt=0;compt<listLoc.length;compt++){
         let temp=listLoc[compt].innerText;
         let check=temp.search(arg);
         if(check>=0){
-            if(document.getElementById('mode-sitemap_openUrlOn').checked)openPage(temp)
+            finalList[total]=temp;
+            console.log(finalList[compt]);
             total+=1;
             result+='<p>'+temp+'</p>';
         }
     }
+    if(document.getElementById('mode-sitemap_openUrlOn').checked)openLinkFromSiteMap(finalList,total)
     document.getElementById('mode-sitemap-result-urls').innerHTML=result;
     copyElement(document.getElementById('mode-sitemap-result-urls'));
     document.getElementById('total-count').innerHTML=total;
+}
+
+const openLinkFromSiteMap=(argListLink,argTotalCount)=>{
+    if(argTotalCount<50){
+        for(var compt=0;compt<argTotalCount;compt++){
+            openPage(argListLink[0]);
+        }
+    }
 }
 
 btnSelectModeSiteMap.onclick=function(activeTab){
