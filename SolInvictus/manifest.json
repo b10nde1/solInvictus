@@ -1,7 +1,7 @@
 {
     "name": "Sol Invictus",
-    "version": "0",
-    "description": "Sol Invictus description",
+    "version": "1",
+    "description": "Sol Invictus return list of urls in sitemap.xml",
     "permissions":["tabCapture","tabs","activeTab","declarativeContent","storage"],
     "background":{
         "scripts":["background.js"],

@@ -1,7 +1,7 @@
 ------------------------------------------
-V0 
+V1 
 
-Note : init project
+Note : Sol invictus return list of urls in sitemap.xml
 
 Add : N/A
 
