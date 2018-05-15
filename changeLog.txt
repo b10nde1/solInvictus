@@ -1,4 +1,12 @@
 ------------------------------------------
+V1.1
+
+Note : return error pages
+
+Add : front -> 404, 500 and maintenance || back -> list of countries for Error Pages Activation and code back
+
+Remove : N/A
+------------------------------------------
 V1 
 
 Note : Sol invictus return list of urls in sitemap.xml
