@@ -59,27 +59,74 @@ btnConfirm.onclick=function(activeTab){
     let environment=document.getElementById("environment").value;
     let returnUrl=urlMarket(market,environment);
     let result="";
+    if(document.getElementById('optionErrorPagesActivation').checked){
+        let tempListUrls=initListOfUrls(environment);
+        for(var compt=0;compt<tempListUrls.length;compt++){
+            let temp404=error404(tempListUrls[compt][1]);
+            let temp500=error500(tempListUrls[compt][1]);
+            let temp503=error503(tempListUrls[compt][1]);
+            result+='<p>'+temp404+'</p><p>'+temp500+'</p><p>'+temp503+'</p>';
+            openPage(temp404);openPage(temp500);openPage(temp503);
+        }
+        displayResut(result);
+        return 0;
+    }
     if(document.getElementById("optionSiteMap").checked){
         let returnSitemap=siteMap(returnUrl);
-        result=result+'<p>'+returnSitemap+'</p>';
+        result+='<p>'+returnSitemap+'</p>';
         openPage(returnSitemap);
     }
     if(document.getElementById("optionCodeHtml").checked){
         let returnHtml=htmlCode(returnUrl);
-        result=result+'<p>'+returnHtml+'</p>';
+        result+='<p>'+returnHtml+'</p>';
         openPage(returnHtml);
     }
     if(document.getElementById("optionUrl").checked){
-        result=result+'<p>'+returnUrl+'</p>';
+        result+='<p>'+returnUrl+'</p>';
         openPage(returnUrl);
+    }
+    if(document.getElementById("optionErrorPages404").checked){
+        let temp404=error404(returnUrl);
+        result+='<p>'+temp404+'</p>';
+        openPage(temp404);
+    }
+    if(document.getElementById("optionErrorPages500").checked){
+        let temp500=error500(returnUrl);
+        result+='<p>'+temp500+'</p>'
+        openPage(temp500);
+    }
+    if(document.getElementById("optionErrorPages503").checked){
+        let temp503=error503(returnUrl);
+        result+='<p>'+temp503+'</p>';
+        openPage(temp503);
     }
     displayResut(result);
 }
 
 const initListOfUrls=(arg)=>{
     try{
-        let listMarketsCD=[['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com']];
-        let listMarketsCM=[['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com']];
+        let listMarketsCD=[
+            ['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com'],
+            ['ca-en','http://www.pampers.ca/en-ca/'],['br','http://www.pampers.com.br/'],
+            ['ar','http://www.pampers.com.ar/'],['cl','http://www.pampers.cl/'],
+            ['uk','http://www.pampers.co.uk/'],['de','https://www.pampers.de/'],
+            ['ru','http://www.pampers-gorodok.ru/'],['tr','http://www.prima.com.tr/'],
+            ['in','http://www.in.pampers.com/'],['za','http://www.pampers.co.za/'],
+            ['ae','https://www.pampers.ae'],['sa-ar','http://www.pampersarabia.com/ar-sa/'],
+            ['sa-en','http://www.pampersarabia.com/en-sa/'],['jp','http://www.jp.pampers.com/'],
+            ['ph','https://www.pampers.ph/'],['pl','http://www.pampers.pl/'],
+            ['dodot es','https://www.dodot.es'],['nl','http://www.pampers.nl/']];
+        let listMarketsCM=[
+            ['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com'],
+            ['ca-en','http://author.pampers.ca.pgsitecore.com/en-ca/'],['br','http://author.pampers.com.br.pgsitecore.com/'],
+            ['ar','http://author.pampers.com.ar.pgsitecore.com/'],['cl','http://author.pampers.cl.pgsitecore.com/'],
+            ['uk','http://author.pampers.co.uk.pgsitecore.com/'],['de','https://author.pampers.de.pgsitecore.com/'],
+            ['ru','http://author.pampersgorodok.ru.pgsitecore.com/'],['tr','http://author.prima.com.tr.pgsitecore.com/'],
+            ['in','http://author.in.pampers.com.pgsitecore.com/'],['za','http://author.pampers.co.za.pgsitecore.com/'],
+            ['ae','https://author.pampers.ae.pgsitecore.com'],['sa-ar','http://author.pampersarabia.com.pgsitecore.com/ar-sa/'],
+            ['sa-en','http://author.pampersarabia.com.pgsitecore.com/en-sa/'],['jp','http://author.jp.pampers.com.pgsitecore.com/'],
+            ['ph','https://author.pampers.ph.pgsitecore.com/'],['pl','http://author.pampers.pl.pgsitecore.com/'],
+            ['dodot es','https://author.dodot.es.pgsitecore.com'],['nl','http://author.pampers.nl.pgsitecore.com/']];
         if(arg=='cd')return listMarketsCD;
         if(arg=='cm')return listMarketsCM;
     }
@@ -107,6 +154,12 @@ const urlMarket=(argMarket,argEnvironment)=>{
 const siteMap=(arg)=>{return arg+'/sitemap.xml';}
 
 const htmlCode=(arg)=>{return 'view-source:'+arg;}
+
+const error404=(arg)=>{return arg+'/qwerty123';}
+
+const error500=(arg)=>{return arg+'/error-500';}
+
+const error503=(arg)=>{return arg+'/maintenance';}
 
 const displayResut=(arg)=>{
     document.getElementById("result").innerHTML=arg;
