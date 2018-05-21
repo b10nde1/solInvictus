@@ -107,24 +107,24 @@ const initListOfUrls=(arg)=>{
     try{
         let listMarketsCD=[
             ['fr','https://www.pampers.fr'],['us_en','https://www.pampers.com'],
-            ['ca-en','http://www.pampers.ca/en-ca/'],['br','http://www.pampers.com.br/'],
+            ['ca_en','http://www.pampers.ca/en-ca/'],['br','http://www.pampers.com.br/'],
             ['ar','http://www.pampers.com.ar/'],['cl','http://www.pampers.cl/'],
             ['uk','http://www.pampers.co.uk/'],['de','https://www.pampers.de/'],
             ['ru','http://www.pampers-gorodok.ru/'],['tr','http://www.prima.com.tr/'],
             ['in','http://www.in.pampers.com/'],['za','http://www.pampers.co.za/'],
-            ['ae','https://www.pampers.ae'],['sa-ar','http://www.pampersarabia.com/ar-sa/'],
-            ['sa-en','http://www.pampersarabia.com/en-sa/'],['jp','http://www.jp.pampers.com/'],
+            ['ae','https://www.pampers.ae'],['sa_ar','http://www.pampersarabia.com/ar-sa/'],
+            ['sa_en','http://www.pampersarabia.com/en-sa/'],['jp','http://www.jp.pampers.com/'],
             ['ph','https://www.pampers.ph/'],['pl','http://www.pampers.pl/'],
             ['dodot es','https://www.dodot.es'],['nl','http://www.pampers.nl/']];
         let listMarketsCM=[
             ['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com'],
-            ['ca-en','http://author.pampers.ca.pgsitecore.com/en-ca/'],['br','http://author.pampers.com.br.pgsitecore.com/'],
+            ['ca_en','http://author.pampers.ca.pgsitecore.com/en-ca/'],['br','http://author.pampers.com.br.pgsitecore.com/'],
             ['ar','http://author.pampers.com.ar.pgsitecore.com/'],['cl','http://author.pampers.cl.pgsitecore.com/'],
             ['uk','http://author.pampers.co.uk.pgsitecore.com/'],['de','https://author.pampers.de.pgsitecore.com/'],
-            ['ru','http://author.pampersgorodok.ru.pgsitecore.com/'],['tr','http://author.prima.com.tr.pgsitecore.com/'],
+            ['ru','https://author.pampersgorodokru.pgsitecore.com'],['tr','http://author.prima.com.tr.pgsitecore.com/'],
             ['in','http://author.in.pampers.com.pgsitecore.com/'],['za','http://author.pampers.co.za.pgsitecore.com/'],
-            ['ae','https://author.pampers.ae.pgsitecore.com'],['sa-ar','http://author.pampersarabia.com.pgsitecore.com/ar-sa/'],
-            ['sa-en','http://author.pampersarabia.com.pgsitecore.com/en-sa/'],['jp','http://author.jp.pampers.com.pgsitecore.com/'],
+            ['ae','https://author.pampers.ae.pgsitecore.com'],['sa_ar','http://author.pampersarabia.com.pgsitecore.com/ar-sa/'],
+            ['sa_en','http://author.pampersarabia.com.pgsitecore.com/en-sa/'],['jp','http://author.jp.pampers.com.pgsitecore.com/'],
             ['ph','https://author.pampers.ph.pgsitecore.com/'],['pl','http://author.pampers.pl.pgsitecore.com/'],
             ['dodot es','https://author.dodot.es.pgsitecore.com'],['nl','http://author.pampers.nl.pgsitecore.com/']];
         if(arg=='cd')return listMarketsCD;
