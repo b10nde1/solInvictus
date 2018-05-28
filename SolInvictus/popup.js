@@ -115,18 +115,18 @@ const initListOfUrls=(arg)=>{
             ['ae','https://www.pampers.ae'],['sa_ar','http://www.pampersarabia.com/ar-sa'],
             ['sa_en','http://www.pampersarabia.com/en-sa'],['jp','http://www.jp.pampers.com'],
             ['ph','https://www.pampers.ph'],['pl','http://www.pampers.pl'],
-            ['dodot es','https://www.dodot.es'],['nl','http://www.pampers.nl']];
+            ['es','https://www.dodot.es'],['nl','http://www.pampers.nl']];
         let listMarketsCM=[
             ['fr','https://author.pampers.fr.pgsitecore.com'],['us_en','https://author.pampers.com.pgsitecore.com'],
-            ['ca_en','http://author.pampers.ca.pgsitecore.com/en-ca'],['br','http://author.pampers.com.br.pgsitecore.com'],
-            ['ar','http://author.pampers.com.ar.pgsitecore.com'],['cl','http://author.pampers.cl.pgsitecore.com'],
+            ['ca_en','http://author.pampers.ca.pgsitecore.com/en-ca'],['br','http://author.pamperscombr.pgsitecore.com'],
+            ['ar','http://author.pamperscomar.pgsitecore.com'],['cl','http://author.pamperscl.pgsitecore.com'],
             ['uk','http://author.pampers.co.uk.pgsitecore.com'],['de','https://author.pampers.de.pgsitecore.com'],
             ['ru','https://author.pampersgorodokru.pgsitecore.com'],['tr','http://author.prima.com.tr.pgsitecore.com'],
             ['in','http://author.in.pampers.com.pgsitecore.com'],['za','http://author.pampers.co.za.pgsitecore.com'],
             ['ae','https://author.pampers.ae.pgsitecore.com'],['sa_ar','http://author.pampersarabia.com.pgsitecore.com/ar-sa'],
             ['sa_en','http://author.pampersarabia.com.pgsitecore.com/en-sa'],['jp','http://author.jp.pampers.com.pgsitecore.com'],
-            ['ph','https://author.pampers.ph.pgsitecore.com'],['pl','http://author.pampers.pl.pgsitecore.com'],
-            ['dodot es','https://author.dodot.es.pgsitecore.com'],['nl','http://author.pampers.nl.pgsitecore.com']];
+            ['ph','https://author.pampers.ph.pgsitecore.com'],['pl','http://author.pamperspl.pgsitecore.com'],
+            ['es','https://author.dodot.es.pgsitecore.com'],['nl','http://author.pampers.nl.pgsitecore.com']];
         if(arg=='cd')return listMarketsCD;
         if(arg=='cm')return listMarketsCM;
     }
